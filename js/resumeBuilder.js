@@ -140,6 +140,14 @@ var project = {
           "description" : "Logo for dancing school.",
           "images" : ["http://www.studiodansa.com/v2/wp-content/uploads/2014/08/logo-300x107.jpg"]
 
+    },
+    {
+          "title" : "Black Water Blues - promo video",
+          "dates" : "January 2013",
+          "description" : "Promo video for festival.",
+          "images" : "",
+          "video" : "https://www.youtube.com/watch?v=cZ0DS-EuTIk"
+
     }
     ]
     //"display" : function
@@ -220,10 +228,13 @@ project.display = function() {
         var formattedTitle=HTMLprojectTitle.replace("%data%", project.projects[p].title);
         var formattedDates=HTMLprojectDates.replace("%data%", project.projects[p].dates);
         var formattedDescription=HTMLprojectDescription.replace("%data%", project.projects[p].description);
-        var formattedPic=HTMLprojectImage.replace("%data%", project.projects[p].images[0]);
-        
+        var formattedPic="";
+        if(project.projects[p].images[0]!=null) {
+            formattedPic=HTMLprojectImage.replace("%data%", project.projects[p].images[0]);
+        } else {
+            formattedPic="<iframe width='420' height='315'src='"+project.projects[p].video+"'></iframe>";
+        }
         var data=formattedTitle+formattedDates+formattedDescription+formattedPic;
-        
         $(".project-entry").append(data);
     }
 };
