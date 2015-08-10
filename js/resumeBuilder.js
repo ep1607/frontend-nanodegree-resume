@@ -166,9 +166,10 @@ bio.display = function() {
     var formattedTwitter=HTMLtwitter.replace("%data%", bio.contacts.twitter);
     var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedContactInfo=formattedMobile+formattedEmail+formattedTwitter+formattedGithub+formattedLocation;+
+    var formattedContactInfo=formattedMobile+formattedEmail+formattedTwitter+formattedGithub+formattedLocation;
     $("#topContacts").append(formattedContactInfo);
-    
+    var formattedContactFooter=formattedMobile+formattedEmail+formattedTwitter+formattedGithub
+    $("#footerContacts").append(formattedContactFooter);
     
     var formattedPic=HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedPic);
