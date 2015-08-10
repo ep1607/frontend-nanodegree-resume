@@ -86,6 +86,8 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  logClicks(loc.pageX, loc.pageY);
+  
 });
 
 
@@ -114,8 +116,7 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js. 
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
-
+  
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
@@ -189,6 +190,7 @@ function initializeMap() {
   If so, it creates a new map marker for that location.
   */
   function callback(results, status) {
+
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarker(results[0]);
     }
@@ -236,7 +238,6 @@ Uncomment the code below when you're ready to implement a Google Map!
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
-
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {

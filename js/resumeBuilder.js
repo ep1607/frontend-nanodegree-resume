@@ -28,7 +28,7 @@ This is empty on purpose! Your code to build the resume will go here.
           "email": "eva.pocivavsek.janhar@gmail.com",
           "github": "https://github.com/ep1607",
           "twitter": "not jet :)", 
-          "location": "Tabor, Ljubljana"
+          "location": "Tabor 8, Ljubljana"
     },
     "welcomeMessage": '"Tralala..."', 
     "skills": ["programming", "designing", "dancing", "performing", "teaching", "DJing", "video editing", "self-learning", "procarstinanting"],
@@ -58,7 +58,7 @@ var education = {
     "schools": [
         {
         "name" : "Faculty of Natural Sciences and Engineering",
-        "location" : "Ljubljana",
+        "location" : "Snežniška ulica 5, Ljubljana",
         "degree" : "Bachelor's degree",
         "majors" : ["Graphic and Media Technology"],
         "dates" : 2011,
@@ -66,7 +66,7 @@ var education = {
         },
         {
         "name" : "Faculty of Computer and Information Science",
-        "location" : "Ljubljana",
+        "location" : "Večna Pot 113, Ljubljana",
         "degree" : "still studying",
         "majors" : ["not jet"],
         "dates" : "now",
@@ -96,21 +96,21 @@ var work = {
     "jobs" : [{
         "employer" : "Cankarjev Dom", 
         "title" : "hostes", 
-        "location" : "Ljubljana", 
+        "location" : "Prešernova cesta 10, Ljubljana", 
         "dates" : "November 2008 - September 2011",
         "description" : "garderobe, selling tickets, hostes in gallery, events,..." 
     },
     {
         "employer" : "VPK", 
         "title" : "MCR operator", 
-        "location" : "Ljubljana", 
+        "location" : "Kranjčeva 22, Ljubljana", 
         "dates" : "March 2013 - September 2015",
         "description" : "work as Media controller, also did graphics, video and sound editing,..." 
     },
     {
         "employer" : "Studio Dansa", 
         "title" : "dance teacher", 
-        "location" : "Ljubljana", 
+        "location" : "Vilharjeva 3, Ljubljana", 
         "dates" : "November 2013 - now",
         "description" : "Teaching Lindy Hop, solo jazz, DJing, preforming... "
     }]
@@ -265,3 +265,5 @@ education.display = function() {
 };
 
 education.display();
+
+$("#mapDiv").append(googleMap);
