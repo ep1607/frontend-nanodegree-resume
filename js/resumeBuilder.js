@@ -89,10 +89,14 @@ var project = {
           "dates" : "January 2013",
           "description" : "Promo video for festival.",
           "images" : "",
-          "video" : "https://www.youtube.com/watch?v=cZ0DS-EuTIk"
+          "video" : "cZ0DS-EuTIk"
     }
     ]
 };
+
+
+var id="";
+
 
 //
 // from BIO
@@ -182,7 +186,8 @@ project.display = function() {
                 j++;
             }
         } else {
-            formattedPic="<iframe width='854' height='480'src='"+project.projects[i].video+"'></iframe>";
+            formattedPic="<div id='player'></div>";
+            id=project.projects[i].video;
         }
         
         var data=formattedTitle+formattedDates+formattedDescription+formattedPic;
@@ -236,3 +241,30 @@ education.display = function() {
 education.display();
 
 $("#mapDiv").append(googleMap);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: "cZ0DS-EuTIk",
+        events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.stopVideos();
+}
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
